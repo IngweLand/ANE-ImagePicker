@@ -159,7 +159,7 @@ public class AirImagePickerUtils {
 	
 		// Save image to album
 		File folder = getAlbumFolder(albumName);
-		File picture = new File(folder, prefix + "_" + current);
+		File picture = new File(folder, prefix + "_" + current + ".jpg");
 	
 		// Write Image to File
 		try {
