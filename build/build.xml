@@ -6,6 +6,7 @@
 
     <!-- All -->
     <target name="all" depends="ios,android,swc,package" description="Full build of extension"/>
+    <target name="android-release" depends="android,swc,package-android" description="Full build of extension for Android only"/>
     <target name="all-android-debug" depends="ios,android-debug,swc,package" description="Full build of extension w/debugging on Android"/>
 
     <!-- iOS -->
@@ -97,6 +98,22 @@
             <arg value="../build/extension.xml"/>
             <arg line="-swc swc/${name}.swc"/>
             <arg line="-platform iPhone-ARM -platformoptions ../build/platform.xml -C ios/ ."/>
+            <arg line="-platform Android-ARM -C android/ ."/>
+            <arg line="-platform default -C default/ ."/>
+        </exec>
+
+        <move file="../temp/${name}.ane" todir="../bin"/>
+        <delete dir="../temp"/>
+    </target>
+
+    <target name="package-android" description="Create the extension package">
+        <exec executable="${flex.sdk}/bin/adt${bin.ext}" failonerror="true" dir="../temp">
+            <arg value="-package"/>
+            <arg value="-target"/>
+            <arg value="ane"/>
+            <arg value="${name}.ane"/>
+            <arg value="../build/extension-android.xml"/>
+            <arg line="-swc swc/${name}.swc"/>
             <arg line="-platform Android-ARM -C android/ ."/>
             <arg line="-platform default -C default/ ."/>
         </exec>
