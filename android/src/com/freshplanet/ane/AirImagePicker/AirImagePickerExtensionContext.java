@@ -108,7 +108,7 @@ public class AirImagePickerExtensionContext extends FREContext
 
 	public void displayCamera(Boolean allowVideoCaptures, Boolean crop, String albumName, int maxImgWidth, int maxImgHeight, String baseUri)
 	{
-		ImagePickerParameters params = new ImagePickerParameters("airImagePicker", baseUri, crop, maxImgWidth, maxImgWidth, albumName);
+		ImagePickerParameters params = new ImagePickerParameters("airImagePicker", baseUri, crop, maxImgWidth, maxImgHeight, albumName);
 
 		Intent intent;
 		if (allowVideoCaptures)
