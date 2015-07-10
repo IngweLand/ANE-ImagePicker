@@ -247,11 +247,9 @@ package com.freshplanet.ane.AirImagePicker
 			if (!isCameraAvailable()) callback(STATUS_NOT_SUPPORTED, null);
 			prepareToDisplayNativeUI(callback);
 			if(_isAndroid) {
-				if (albumName != null) _context.call("displayCamera", maxImageWidth, maxImageHeight, allowVideo, crop, albumName, chatLink);
-				else _context.call("displayCamera", allowVideo, crop);
+                    _context.call("displayCamera", maxImageWidth, maxImageHeight, allowVideo, crop, albumName, chatLink);
 			} else {
-				if (albumName != null) _context.call("displayCamera", maxImageWidth, maxImageHeight, allowVideo, crop, albumName);
-				else _context.call("displayCamera", allowVideo, crop);
+                    _context.call("displayCamera", maxImageWidth, maxImageHeight, allowVideo, crop, albumName);
 			}
 		}
 

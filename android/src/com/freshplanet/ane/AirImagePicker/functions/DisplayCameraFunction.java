@@ -33,7 +33,8 @@ public class DisplayCameraFunction implements FREFunction
 			allowVideoCapture = args[2].getAsBool();
 			crop = args[3].getAsBool();
 			if (args.length > 4) {
-				albumName = args[4].getAsString();
+				if(args[4] != null)
+					albumName = args[4].getAsString();
 			}
 			if (args.length > 5) {
 				if(args[5] != null)
