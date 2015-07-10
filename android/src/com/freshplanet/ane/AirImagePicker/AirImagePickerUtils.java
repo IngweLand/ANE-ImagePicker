@@ -300,7 +300,7 @@ public class AirImagePickerUtils {
 		return isActionAvailable(activity, GALLERY_IMAGES_ONLY_ACTION);
 	}
 
-	static final int BITMAP_MEMORY_LIMIT = 5 * 1024 * 1024; // 5MB
+	static final int BITMAP_MEMORY_LIMIT = 25 * 1024 * 1024; // 25MB
 
 	public static Boolean isCameraAvailable(Activity activity)
 	{
